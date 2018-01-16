@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-git_source(:github) {|Battleships| "https://github.com/#{Battleships}" }
+ruby '2.4.1'
 
-# gem "rails"
+# git_source(:github) {|Battle| "https://github.com/#{Battle}" }
+
+gem 'rspec'
+gem 'sinatra'
