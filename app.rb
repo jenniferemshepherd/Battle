@@ -11,7 +11,6 @@ enable :sessions
   run! if app_file == $0
 
   post '/names' do
-    p params
     session[:name_1] = params[:name_1]
     session[:name_2] = params[:name_2]
     redirect '/play'
