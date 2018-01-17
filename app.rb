@@ -12,11 +12,7 @@ class Battle < Sinatra::Base
   run! if app_file == $0
 
   post '/names' do
-    #session[:name_1] = params[:name_1]
-    #session[:name_2] = params[:name_2]
-    $player_1 =  Player.new(params[:name_1])
-    $player_2 =  Player.new(params[:name_2])
-    $game = Game.new
+    $game = Game.new(Player.new(params[:name_1]),Player.new(params[:name_2]))
     redirect '/play'
   end
 
