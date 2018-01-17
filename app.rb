@@ -2,7 +2,7 @@ require 'sinatra'
 
 class Battle < Sinatra::Base
 
-enable :sessions
+  enable :sessions
 
   get '/' do
     erb(:index)
@@ -18,7 +18,11 @@ enable :sessions
 
   get '/play' do
     @name_1 = session[:name_1]
-    @name_2 = session[:name_2]
+    $name_2 = session[:name_2]
     erb(:play)
+  end
+
+  get '/attack' do
+    erb(:attack)
   end
 end
