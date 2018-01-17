@@ -20,8 +20,4 @@ class Player
     @hp -= SLAP
   end
 
-  def hit(opponent)
-    opponent.receive_damage
-  end
-
 end

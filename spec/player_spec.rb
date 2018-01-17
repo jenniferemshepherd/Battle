@@ -20,11 +20,4 @@ describe Player do
     end
   end
 
-  describe "#hit" do
-    it 'hits player_2 from player_1' do
-      expect(player_2).to receive(:receive_damage)
-      player_1.hit(player_2)
-    end
-  end
-
 end

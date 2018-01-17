@@ -1,5 +1,5 @@
 require 'sinatra'
-require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
 
@@ -16,6 +16,7 @@ class Battle < Sinatra::Base
     #session[:name_2] = params[:name_2]
     $player_1 =  Player.new(params[:name_1])
     $player_2 =  Player.new(params[:name_2])
+    $game = Game.new
     redirect '/play'
   end
 
@@ -29,7 +30,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @player_1 = $player_1
     @player_2 = $player_2
-    @player_1.hit(@player_2)
+    $game.hit(@player_2)
     erb(:attack)
   end
 end
