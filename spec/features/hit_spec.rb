@@ -4,4 +4,10 @@ feature 'attack player' do
     click_button("Attack!")
     expect(page).to have_content("Chris has been struck!")
   end
+
+  scenario 'adjusts player HP' do
+    sign_in_and_play
+    click_button("Attack!")
+    expect(page).to have_content("Chris's HP is now 90.")
+  end
 end
