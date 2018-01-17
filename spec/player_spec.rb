@@ -1,19 +1,29 @@
 require "player"
 
 describe Player do
-  subject(:player) {described_class.new("Jennifer")}
+  subject(:player_1) { described_class.new("Jennifer") }
+  subject(:player_2) { described_class.new("Chris") }
 
-  it "should return its name Jennifer" do
-    expect(player.name).to eq("Jennifer")
+  describe "#initialize" do
+    it "should return player_1 name as Jennifer" do
+      expect(player_1.name).to eq("Jennifer")
+    end
+
+    it "has default HP" do
+      expect(player_1.hp).to eq Player::DEFAULT_HP
+    end
   end
 
-  it "has default HP" do
-    expect(player.hp).to eq Player::DEFAULT_HP
+  describe "#receive_damage" do
+    it 'decreases player_1 default slap HP when hit' do
+      expect{ player_1.receive_damage }.to change{ player_1.hp }.by(-Player::SLAP)
+    end
   end
 
   describe "#hit" do
-    it 'loses default slap HP when hit' do
-      expect{ player.hit }.to change{ player.hp }.by(-Player::SLAP)
+    it 'hits player_2 from player_1' do
+      expect(player_2).to receive(:receive_damage)
+      player_1.hit(player_2)
     end
   end
 

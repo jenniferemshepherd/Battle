@@ -16,8 +16,12 @@ class Player
     @hp
   end
 
-  def hit
+  def receive_damage
     @hp -= SLAP
+  end
+
+  def hit(opponent)
+    opponent.receive_damage
   end
 
 end
