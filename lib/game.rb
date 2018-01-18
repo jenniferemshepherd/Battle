@@ -2,6 +2,14 @@ require_relative "player"
 
 class Game
 
+  def self.save(game)
+    @@game_state = game
+  end
+
+  def self.load
+    @@game_state
+  end
+
   attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)
