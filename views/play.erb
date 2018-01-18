@@ -7,21 +7,18 @@
 </form>
 
 
-<table><tr><td style="vertical-align:top">
-<p> <%= @game.opponent.name %>'s HP: <%= @game.opponent.hp %> </p> 
+<table><tr>
+<td style="vertical-align:top">
+<p> <%= @game.opponent.name %>'s HP: <%= @game.opponent.hp %> </p>
 <progress id="health" value="<%= @game.opponent.hp %>" max="100" style="background-color: red"></progress>
-<br />
-<form action="/attack" method="get">
-  <input type="submit" id="Attack!" value="Attack Jennifer!">
-</form>
 </td>
-
 
 <td style="vertical-align:top">
 <p> <%= @game.active_player.name %>'s HP: <%= @game.active_player.hp %> </p>
-<progress id="health" value="<%= @game.active_player.hp %>" max="100" style="background-color: green"></progress>
+<progress id="health" value="<%= @game.active_player %>" max="100" style="background-color: green"></progress>
 </td>
-
 </tr></table>
 
-
+<p><form action="/attack" method="get">
+  <input type="submit" id="Attack!" value="Attack <%= @game.opponent.hp %>!">
+</form></p>
