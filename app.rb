@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/game'
+require 'pry'
 
 class Battle < Sinatra::Base
 
