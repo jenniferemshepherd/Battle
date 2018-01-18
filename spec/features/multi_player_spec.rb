@@ -46,5 +46,13 @@ feature 'attack player' do
     knock_out
     expect(page).to have_content("Chris has lost!!!!!!")
   end
+end
+
+feature 'poison player' do
+  scenario 'player clicks poison attack' do
+    sign_in_and_play
+    click_button("Poison!")
+    expect(page).to have_content("Chris has been poisoned!")
+  end
 
 end

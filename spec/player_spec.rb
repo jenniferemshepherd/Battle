@@ -27,4 +27,11 @@ describe Player do
     end
   end
 
+  describe "#poison" do
+    it 'sets status to be poisoned' do
+      player_1.poison
+      expect(player_1).to be_poisoned
+    end
+  end
+
 end

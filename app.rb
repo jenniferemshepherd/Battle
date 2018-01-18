@@ -32,6 +32,11 @@ class Battle < Sinatra::Base
     erb(:attack)
   end
 
+  get '/poison' do
+    @game.opponent.poison
+    erb(:poison)
+  end
+
   get '/switch' do
     @game.switch_players
     redirect '/play'

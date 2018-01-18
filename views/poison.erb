@@ -1,0 +1,8 @@
+<h1> <%= @game.opponent.name %> has been poisoned!</h1>
+
+
+<h2> <%= @game.opponent.name %>'s HP is now <%= @game.opponent.hp %>.</h2>
+
+<form action="/play" method="get">
+  <input type="submit" value="Next move...!">
+</form>
