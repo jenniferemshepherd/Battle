@@ -5,6 +5,7 @@
 
 <p>It's <%= @game.active_player.name %>'s turn.</p>
 
+<p> <%= @game.active_player.name %>'s HP: <%= @game.active_player.hp %> </p>
 
 
 <form action="/attack" method="get">
@@ -14,4 +15,3 @@
 <form action="/switch" method="get">
   <input type="submit" value="Switch players">
 </form>
-

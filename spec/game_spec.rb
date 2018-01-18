@@ -3,7 +3,7 @@ require "game"
 describe Game do
     let (:player_1) {double :Player}
     let (:player_2) {double :Player}
-    subject(:game) { described_class.new(player_1, player_2, :player_1) }
+    subject(:game) { described_class.new(player_1, player_2) }
 
     describe "#initialize" do
       it 'initializes player 1' do
@@ -24,7 +24,7 @@ describe Game do
 
     describe '#switch players' do
       it 'switches the players around' do
-        expect(game.switch_players).to eq :player_2
+        expect(game.switch_players).to eq player_2
       end
     end
 
