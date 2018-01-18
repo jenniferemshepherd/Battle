@@ -6,10 +6,13 @@ class Battle < Sinatra::Base
 
   enable :sessions
 
+   # start the server if ruby file executed directly
+   run! if app_file == $0
+
   get '/' do
     erb(:index)
   end
-
+ 
   post '/names' do
     player_1 = Player.new(params[:name_1])
     player_2 = Player.new(params[:name_2])
@@ -24,12 +27,14 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    @game.hit(@game.player_2)
+    @game.hit(@game.opponent)
     erb(:attack)
   end
+
   get '/switch' do
     @game = $game
     @game.switch_players
     redirect '/play'
   end
+
 end
