@@ -1,7 +1,6 @@
 class Player
 
   DEFAULT_HP = 100
-  SLAP = 10
 
   def initialize(name)
     @name = name
@@ -17,7 +16,7 @@ class Player
   end
 
   def receive_damage
-    @hp -= SLAP
+    @hp -= rand(11)
   end
 
   def knocked_out?

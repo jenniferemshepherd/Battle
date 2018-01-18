@@ -16,7 +16,7 @@ describe Player do
 
   describe "#receive_damage" do
     it 'decreases player_1 default slap HP when hit' do
-      expect{ player_1.receive_damage }.to change{ player_1.hp }.by(-Player::SLAP)
+      expect{ player_1.receive_damage }.to change{ player_1.hp }
     end
   end
 
