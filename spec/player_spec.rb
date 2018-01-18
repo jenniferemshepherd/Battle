@@ -20,4 +20,11 @@ describe Player do
     end
   end
 
+  describe "#lost" do
+    it 'knows the player has 0 HP' do
+      10.times { player_1.receive_damage }
+      expect(player_1).to be_knocked_out
+    end
+  end
+
 end

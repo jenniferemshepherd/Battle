@@ -39,6 +39,10 @@ describe Game do
         expect(game.opponent).to eq player_2
       end
     end
+    # 
+    # describe '#check_hp' do
+    #   it ''
+    # end
 
 
 end

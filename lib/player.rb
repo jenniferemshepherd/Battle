@@ -20,4 +20,8 @@ class Player
     @hp -= SLAP
   end
 
+  def knocked_out?
+    @hp == 0
+  end
+
 end

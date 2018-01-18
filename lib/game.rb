@@ -16,12 +16,7 @@ class Game
 
   def switch_players
     @players = [@players.keys, @players.values.rotate].transpose.to_h
-   #
-   # keys = @players.keys
-   # values = @players.values
-   # @players[keys[0]] = values[1]
-   # @players[keys[1]] = values[0]
-   @players[:active]
+    @players[:active]
   end
 
   def active_player
@@ -30,6 +25,10 @@ class Game
 
   def opponent
     @players[:opponent]
+  end
+
+  def check_hp
+    #checks if either hp is zero
   end
 
 end
