@@ -41,4 +41,14 @@ feature 'attack player' do
     expect(page).to have_content("Jennifer's HP is now 90.")
   end
 
+  scenario 'lose' do
+    sign_in_and_play
+    9.times do
+      click_button("Attack!")
+      click_button("Next move...!")
+    end
+    click_button("Attack!")
+    expect(page).to have_content("Chris has lost!!!!!!")
+  end
+
 end

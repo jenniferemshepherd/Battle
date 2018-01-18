@@ -28,6 +28,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = $game
     @game.hit(@game.opponent)
+    redirect '/lose' if @game.opponent.knocked_out?
     erb(:attack)
   end
 
@@ -35,6 +36,11 @@ class Battle < Sinatra::Base
     @game = $game
     @game.switch_players
     redirect '/play'
+  end
+
+  get '/lose' do
+    @game = $game
+    erb(:lose)
   end
 
 end

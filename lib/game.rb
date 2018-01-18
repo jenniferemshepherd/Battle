@@ -27,8 +27,4 @@ class Game
     @players[:opponent]
   end
 
-  def check_hp
-    #checks if either hp is zero
-  end
-
 end

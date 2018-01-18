@@ -1,5 +1,7 @@
 <!-- this needs to attack the opponent of the active player -->
 <h1> <%= @game.opponent.name %> has been struck!</h1>
+
+
 <h2> <%= @game.opponent.name %>'s HP is now <%= @game.opponent.hp %>.</h2>
 
 <form action="/play" method="get">
