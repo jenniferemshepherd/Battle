@@ -1,16 +1,27 @@
 
 <h1> <%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 
-<h2> <%= @game.opponent.name %>'s HP: <%= @game.opponent.hp %> </h2>
-
 <p>It's <%= @game.active_player.name %>'s turn.</p>
-
-<p> <%= @game.active_player.name %>'s HP: <%= @game.active_player.hp %> </p>
-
-<form action="/attack" method="get">
-  <input type="submit" value="Attack!">
-</form>
-
 <form action="/switch" method="get">
   <input type="submit" value="Switch players">
 </form>
+
+
+<table><tr><td style="vertical-align:top">
+<p> <%= @game.opponent.name %>'s HP: <%= @game.opponent.hp %> </p> 
+<progress id="health" value="<%= @game.opponent.hp %>" max="100" style="background-color: red"></progress>
+<br />
+<form action="/attack" method="get">
+  <input type="submit" id="Attack!" value="Attack Jennifer!">
+</form>
+</td>
+
+
+<td style="vertical-align:top">
+<p> <%= @game.active_player.name %>'s HP: <%= @game.active_player.hp %> </p>
+<progress id="health" value="<%= @game.active_player.hp %>" max="100" style="background-color: green"></progress>
+</td>
+
+</tr></table>
+
+
