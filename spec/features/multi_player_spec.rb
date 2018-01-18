@@ -43,11 +43,7 @@ feature 'attack player' do
 
   scenario 'lose' do
     sign_in_and_play
-    9.times do
-      click_button("Attack!")
-      click_button("Next move...!")
-    end
-    click_button("Attack!")
+    knock_out
     expect(page).to have_content("Chris has lost!!!!!!")
   end
 
