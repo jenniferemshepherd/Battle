@@ -20,26 +20,24 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
+  before { @game = Game.instance }
+
   get '/play' do
-    @game = Game.load
     erb(:play)
   end
 
   get '/attack' do
-    @game = Game.load
     @game.hit(@game.opponent)
     redirect '/lose' if @game.opponent.knocked_out?
     erb(:attack)
   end
 
   get '/switch' do
-    @game = Game.load
     @game.switch_players
     redirect '/play'
   end
 
   get '/lose' do
-    @game = Game.load
     erb(:lose)
   end
 
