@@ -9,8 +9,6 @@ class Battle < Sinatra::Base
   get '/' do
     erb(:index)
   end
-  # start the server if ruby file executed directly
-  run! if app_file == $0
 
   post '/names' do
     player_1 = Player.new(params[:name_1])
@@ -21,8 +19,6 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
-    # @name_2 = $game.player_2.name
-    # @player_2_hp = $game.player_2.hp
     erb(:play)
   end
 
