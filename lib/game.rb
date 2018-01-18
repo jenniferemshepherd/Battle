@@ -12,4 +12,11 @@ class Game
   def hit(opponent)
     opponent.receive_damage
   end
+  def switch_players
+   if @active_player == :player_1
+    @active_player = :player_2
+   else
+    @active_player = :player_1
+   end
+  end
 end

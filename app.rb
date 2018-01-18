@@ -31,4 +31,9 @@ class Battle < Sinatra::Base
     @game.hit(@game.player_2)
     erb(:attack)
   end
+  get '/switch' do
+    @game = $game
+    @game.switch_players
+    redirect '/play'
+  end
 end
