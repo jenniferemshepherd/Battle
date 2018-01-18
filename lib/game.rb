@@ -2,12 +2,12 @@ require_relative "player"
 
 class Game
 
-  def self.save(game)
-    @@game_state = game
+  def self.create(player_1, player_2)
+    @game_state = Game.new(player_1, player_2)
   end
 
-  def self.load
-    @@game_state
+  def self.instance
+    @game_state
   end
 
   attr_reader :player_1, :player_2
