@@ -3,11 +3,11 @@ Battle Challenge
 
 Brief Summary of Approach
 -------
-I used diagramming to plan my objects and how they would interact with each other.  I then used the TDD cycle, with frequent diagram revisits to implement the program.  I feel a lot more confident with classes and delegation after this challenge.
+This was our first project with a web view and I paired with 4 different people throughout the week to work on this.  I learned about testing web frameworks with Cabpybara and used the MVC pattern for the first time - learning about GET and POST requests.
 
 Points for development:
-* explore injecting dependencies
-* customers can place orders via the text message
+* offer different attacks with differing amounts of damage
+* Use HTML and CSS to improve the user experience
 
 Instructions
 -------
